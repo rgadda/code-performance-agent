@@ -153,13 +153,12 @@ grep -A6 '^### \[security\]' findings.md
 
 | Agent | Role |
 |---|---|
-| `code-scan-coordinator` | Entry point. Detects languages, dispatches experts in parallel, aggregates output. |
+| `code-scan-coordinator` | Entry point. Detects languages, dispatches experts in parallel, assembles the report, writes `findings.md`, and verifies the file landed on disk before claiming success. |
 | `python-expert` | Python — CPython perf traps, Django / Flask / FastAPI, ORM N+1, `pickle` / `eval`, async. Emits a `pytest-benchmark` + `py-spy` + `wrk` kit. |
 | `typescript-expert` | JS / TS + deep **React** (hooks, RSC, Suspense, data fetching) + deep **Node.js** (event loop, streams, worker threads, HTTP internals) + **Next.js, Express, Fastify, NestJS**. Prototype pollution, promise fan-out, `any`-hides-bugs. Emits `vitest bench` + `clinic.js` + `autocannon` kit. |
 | `go-expert` | Go — goroutine leaks, channel deadlocks, `defer` in hot loops, races. Emits `testing.B` + `benchstat` + `pprof` + `vegeta` kit. |
 | `java-expert` | Java (+ best-effort Kotlin) — GC pressure, Spring N+1, pool exhaustion, deserialization RCE. Emits JMH + `async-profiler` + Gatling kit. |
 | `generic-expert` | Fallback for unrecognized languages (Rust, Ruby, PHP, C#, Elixir, Swift, …). Stays at universal engineering principles. |
-| `report-writer` | Assembles the tiered `findings.md` and per-language benchmarking section. |
 
 Language detection routes automatically. You do not need to tell `/scan-code` what language your repo is in.
 
