@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude Code local settings (keep team + commands under version control, but not per-user settings)
+.claude/settings.local.json
