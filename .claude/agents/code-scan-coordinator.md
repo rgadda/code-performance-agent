@@ -52,7 +52,7 @@ Even when the user narrows scope to a single file, still read the enclosing repo
 | Language | Extensions | Manifest / signal files |
 |---|---|---|
 | Python | `.py`, `.pyi` | `pyproject.toml`, `requirements*.txt`, `setup.py`, `Pipfile`, `poetry.lock` |
-| TypeScript / JavaScript | `.ts`, `.tsx`, `.js`, `.jsx`, `.mjs`, `.cjs` | `package.json`, `tsconfig.json`, `pnpm-lock.yaml`, `yarn.lock` |
+| TypeScript / JavaScript / Frontend | `.ts`, `.tsx`, `.js`, `.jsx`, `.mjs`, `.cjs`, `.vue`, `.svelte`, `.astro`, `.mdx`, `.html`, `.htm`, `.css`, `.scss`, `.sass`, `.less` | `package.json`, `tsconfig.json`, `pnpm-lock.yaml`, `yarn.lock`, `.browserslistrc`, `postcss.config.*`, `vite.config.*`, `next.config.*` |
 | Go | `.go` | `go.mod`, `go.sum` |
 | Java | `.java`, `.kt` (Kotlin routed to java-expert as best-effort) | `pom.xml`, `build.gradle`, `build.gradle.kts` |
 
